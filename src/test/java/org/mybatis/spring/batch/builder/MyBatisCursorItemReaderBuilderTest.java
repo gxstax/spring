@@ -78,8 +78,8 @@ class MyBatisCursorItemReaderBuilderTest {
     Assertions.assertThat(itemReader.read()).extracting(Foo::getName).isEqualTo("foo3");
 
     itemReader.update(executionContext);
-    Assertions.assertThat(executionContext.getInt("MyBatisCursorItemReader.read.count")).isEqualTo(3);
-    Assertions.assertThat(executionContext.containsKey("MyBatisCursorItemReader.read.count.max")).isFalse();
+    Assertions.assertThat(executionContext.getInt("MyBatisCursorItemReader.sourceread.count")).isEqualTo(3);
+    Assertions.assertThat(executionContext.containsKey("MyBatisCursorItemReader.sourceread.count.max")).isFalse();
 
     Assertions.assertThat(itemReader.read()).isNull();
   }
@@ -129,7 +129,7 @@ class MyBatisCursorItemReaderBuilderTest {
     Assertions.assertThat(itemReader.read()).extracting(Foo::getName).isEqualTo("foo2");
 
     itemReader.update(executionContext);
-    Assertions.assertThat(executionContext.getInt("MyBatisCursorItemReader.read.count.max")).isEqualTo(2);
+    Assertions.assertThat(executionContext.getInt("MyBatisCursorItemReader.sourceread.count.max")).isEqualTo(2);
 
     Assertions.assertThat(itemReader.read()).isNull();
   }

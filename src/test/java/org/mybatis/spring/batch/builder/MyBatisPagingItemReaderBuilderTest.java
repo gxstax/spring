@@ -91,8 +91,8 @@ class MyBatisPagingItemReaderBuilderTest {
     Assertions.assertThat(itemReader.read()).extracting(Foo::getName).isEqualTo("foo3");
 
     itemReader.update(executionContext);
-    Assertions.assertThat(executionContext.getInt("MyBatisPagingItemReader.read.count")).isEqualTo(3);
-    Assertions.assertThat(executionContext.containsKey("MyBatisPagingItemReader.read.count.max")).isFalse();
+    Assertions.assertThat(executionContext.getInt("MyBatisPagingItemReader.sourceread.count")).isEqualTo(3);
+    Assertions.assertThat(executionContext.containsKey("MyBatisPagingItemReader.sourceread.count.max")).isFalse();
 
     Assertions.assertThat(itemReader.read()).isNull();
   }
@@ -139,7 +139,7 @@ class MyBatisPagingItemReaderBuilderTest {
     Assertions.assertThat(itemReader.read()).extracting(Foo::getName).isEqualTo("foo2");
 
     itemReader.update(executionContext);
-    Assertions.assertThat(executionContext.getInt("MyBatisPagingItemReader.read.count.max")).isEqualTo(2);
+    Assertions.assertThat(executionContext.getInt("MyBatisPagingItemReader.sourceread.count.max")).isEqualTo(2);
 
     Assertions.assertThat(itemReader.read()).isNull();
   }

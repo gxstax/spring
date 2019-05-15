@@ -104,10 +104,10 @@ public class MyBatisPagingItemReaderBuilder<T> {
   }
 
   /**
-   * Configure the max number of items to be read.
+   * Configure the max number of items to be sourceread.
    *
    * @param maxItemCount
-   *          the max items to be read
+   *          the max items to be sourceread
    * @return The current instance of the builder.
    * @see org.springframework.batch.item.support.AbstractItemCountingItemStreamItemReader#setMaxItemCount(int)
    */
